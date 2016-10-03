@@ -160,8 +160,8 @@ plotKmeansClustering <- function(dtm = NULL){
   ### K-means clustering   
   library(fpc)   
   library(cluster)  
-  dtms <- removeSparseTerms(dtm, 0.15) # Prepare the data (max 15% empty space)   
+  dtms <- removeSparseTerms(dtm, 0.10) # Prepare the data (max 15% empty space)   
   d <- dist(t(dtms), method="euclidian")   
-  kfit <- kmeans(d, 2)   
+  kfit <- kmeans(d, 3)   
   clusplot(as.matrix(d), kfit$cluster, color=T, shade=T, labels=2, lines=0)   
 }
