@@ -17,7 +17,7 @@
 
 
 
-importData <- function(fullPathOfFiles = "~/prog-apps/workspaces/workspace-R/courseraR/courseraR/texts"){
+importData <- function(fullPathOfFiles = "texts"){
 	library(readr)
 	platform <- R.Version()$platform
 	if(grepl("apple",platform)){
@@ -26,7 +26,6 @@ importData <- function(fullPathOfFiles = "~/prog-apps/workspaces/workspace-R/cou
 		Sys.setlocale(category = "LC_ALL", locale = "English_United States.1252")
 	}
 	cname = file.path(fullPathOfFiles)
-	## cname = file.path("/Users/marcosarruda","prog-apps", "workspaces","workspace-R","courseraR","courseraR","texts")
 	files <- list.files(cname, pattern = "txt$", full.names = TRUE )
 	data <- vector("character")
 	data <- enc2utf8(data)
