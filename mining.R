@@ -25,7 +25,7 @@ importData <- function(fullPathOfFiles = "texts"){
 	}else {
 		Sys.setlocale(category = "LC_ALL", locale = "English_United States.1252")
 	}
-	cname = file.path(fullPathOfFiles)
+	cname <- file.path(fullPathOfFiles)
 	files <- list.files(cname, pattern = "txt$", full.names = TRUE )
 	data <- vector("character")
 	data <- enc2utf8(data)
