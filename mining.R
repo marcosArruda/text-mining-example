@@ -27,8 +27,7 @@ importData <- function(fullPathOfFiles = "texts"){
 	}
 	cname <- file.path(fullPathOfFiles)
 	files <- list.files(cname, pattern = "txt$", full.names = TRUE )
-	data <- vector("character")
-	data <- enc2utf8(data)
+	data <- enc2utf8(vector("character"))
 	es <- locale("es", decimal_mark = ",", encoding = "UTF-8")
 	for(i in 1:length(files)){
 		data[i] <- read_file(files[i], es)
